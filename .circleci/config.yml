@@ -21,7 +21,7 @@ jobs:
             - node-deps-v1-{{ .Branch }}-{{checksum "package-lock.json"}}
       - run:
           name: install packages
-          command: npm ci && npx playwright install 
+          command: npm ci && npx playwright install-deps
       - save_cache:
           key: node-deps-v1-{{ .Branch }}-{{checksum "package-lock.json"}}
           paths:
